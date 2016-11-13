@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div>
+        <form action="" method="post">
+            <label>題名:<input type="text" size="20" name="subject"></label><br>
+            <label>内容:<input type="text" size="20" name="content"></label>
+            {% csrf_token %}
+            <input type="submit" value="送信">
+        </form>
+        {% if subject %}
+            Subject: {{ subject }}<br>
+        {% endif %}
+        {% if content %}
+            Content: {{ content }}
+        {% endif %}
+    </div>
+    <div>
+        <a href="{% url 'register:index' %}">index</a><br>
+    </div>
+{% endblock %}

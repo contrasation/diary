@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div>
+        {{message}}<br>
+        {{hour}}時{{minute}}分です.
+    </div>
+    <div>
+        <a href="{% url 'register:today' %}">today</a><br>
+        <a href="{% url 'register:get_query' %}">get_query</a><br>
+    </div>
+{% endblock %}
